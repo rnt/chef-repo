@@ -7,6 +7,10 @@
 # All rights reserved - Do Not Redistribute
 #
 
+#
+# Usado solo en Fedora 19
+#
+
 %w(dropbox google-chrome local-rnt skype virtualbox).each do |repo|
   link "/etc/yum.repos.d/#{repo}.repo" do
     to "/home/rcovarru/Proyectos/repo.rnt.cl/#{repo}.repo"
@@ -98,4 +102,14 @@ end
 # Monitoreo
 package 'nagstamon' do
   action :install
+end
+
+# Me gusta tener la opcion de logout
+execute 'always-show-log-out' do
+  command 'dconf write /org/gnome/shell/always-show-log-out true'
+  user 'rcovarru'
+  group 'rcovarru'
+  environment({'HOME' => '/home/rcovarru'})
+  not_if 'dconf read /org/gnome/shell/always-show-log-out | grep true'
+  action :run
 end
