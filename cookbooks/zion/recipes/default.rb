@@ -109,7 +109,13 @@ execute 'always-show-log-out' do
   command 'dconf write /org/gnome/shell/always-show-log-out true'
   user 'rcovarru'
   group 'rcovarru'
-  environment({'HOME' => '/home/rcovarru'})
+  environment({ 'HOME' => '/home/rcovarru' })
   not_if 'dconf read /org/gnome/shell/always-show-log-out | grep true'
   action :run
+end
+
+# Configuracion VPN SL
+link '/etc/NetworkManager/system-connections/SoftLayer' do
+  to '/home/etc/NetworkManager/system-connections/SoftLayer'
+  link_type :symbolic
 end
