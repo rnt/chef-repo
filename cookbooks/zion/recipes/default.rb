@@ -59,3 +59,38 @@ end
     action :install
   end
 end
+
+# # Flash y adobe
+# %w(flash-plugin nspluginwrapper alsa-plugins-pulseaudio libcurl AdobeReader_esp).each do |pac|
+#   package pac do
+#     action :install
+#   end
+# end
+
+# Chrome
+package 'google-chrome-unstable' do
+  action :install
+end
+
+# Dropbox
+#
+# La instalacion no es completamente desatendida... pero lo necesito. :(
+#
+package 'nautilus-dropbox' do
+  action :install
+end
+
+# Skype
+package 'skype' do
+  action :install
+end
+
+# VirtualBox
+package 'VirtualBox' do
+  action :install
+end
+
+# Repo
+package 'createrepo' do
+  action :install
+end
