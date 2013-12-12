@@ -42,7 +42,7 @@ package 'ruby' do
 end
 
 # Control de versiones
-%w(subversion git).each do |pac|
+%w(subversion git gitg).each do |pac|
   package pac do
     action :install
   end
