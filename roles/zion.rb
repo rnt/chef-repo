@@ -11,7 +11,14 @@ description 'Role para zion'
 #   }
 # )
 
+default_attributes(
+  'selinux' => {
+    'state' => 'disabled',
+  },
+)
+
 run_list(
+  'recipe[selinux]',
   'recipe[zion]',
 #  'recipe[chef_handler]',
 #  'recipe[one]',
