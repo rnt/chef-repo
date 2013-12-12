@@ -94,3 +94,8 @@ end
 package 'createrepo' do
   action :install
 end
+
+# Monitoreo
+package 'nagstamon' do
+  action :install
+end
