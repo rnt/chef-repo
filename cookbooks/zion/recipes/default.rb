@@ -41,8 +41,10 @@ package 'vim-enhanced' do
 end
 
 # Scripting
-package 'ruby' do
-  action :install
+%w(ruby ipython).each do |pac|
+  package pac do
+    action :install
+  end
 end
 
 # Control de versiones
