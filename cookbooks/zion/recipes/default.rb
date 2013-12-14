@@ -116,6 +116,15 @@ execute 'always-show-log-out' do
   action :run
 end
 
+# Al bajar la tapa del laptop, que no se suspenda el equipo
+cookbook_file '/etc/systemd/logind.conf' do
+  source 'logind.conf'
+  user 'root'
+  group 'root'
+  mode 0644
+  action :create
+end
+
 # Configuracion VPN SL
 link '/etc/NetworkManager/system-connections/SoftLayer' do
   to '/home/etc/NetworkManager/system-connections/SoftLayer'
