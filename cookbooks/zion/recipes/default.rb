@@ -15,6 +15,7 @@
   link "/etc/yum.repos.d/#{repo}.repo" do
     to "/home/rcovarru/Proyectos/repo.rnt.cl/#{repo}.repo"
     link_type :symbolic
+
   end
 end
 
@@ -112,8 +113,12 @@ execute 'always-show-log-out' do
   user 'rcovarru'
   group 'rcovarru'
   environment({ 'HOME' => '/home/rcovarru' })
-  not_if 'dconf read /org/gnome/shell/always-show-log-out | grep true'
+  not_if 'su -l rcovarru -c "dconf read /org/gnome/shell/always-show-log-out | grep true"'
   action :run
+end
+
+service 'systemd-logind' do
+  supports :restart => true
 end
 
 # Al bajar la tapa del laptop, que no se suspenda el equipo
@@ -123,6 +128,7 @@ cookbook_file '/etc/systemd/logind.conf' do
   group 'root'
   mode 0644
   action :create
+  notifies :restart, "service[systemd-logind]", :delayed
 end
 
 # Configuracion VPN SL
