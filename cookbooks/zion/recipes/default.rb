@@ -136,3 +136,23 @@ link '/etc/NetworkManager/system-connections/SoftLayer' do
   to '/home/etc/NetworkManager/system-connections/SoftLayer'
   link_type :symbolic
 end
+
+# Logrotate
+cookbook_file '/etc/logrotate.conf' do
+  source 'logrotate.conf'
+  user 'root'
+  group 'root'
+  mode 0644
+  action :create
+end
+
+package 'rpm-build' do
+  action :install
+end
+
+# Dependencias para compilar gstm
+%w(libgnomeui-devel libxml2-devel).each do |pac|
+  package pac
+    action :install
+  end
+end
