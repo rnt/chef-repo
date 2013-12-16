@@ -151,7 +151,7 @@ package 'rpm-build' do
 end
 
 # Dependencias para compilar gstm
-%w(libgnomeui-devel libxml2-devel).each do |pac|
+%w(gcc libgnomeui-devel libxml2-devel).each do |pac|
   package pac
     action :install
   end
