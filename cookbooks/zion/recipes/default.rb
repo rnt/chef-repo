@@ -61,7 +61,7 @@ package 'tint2' do
 end
 
 # Esenciales
-%w(terminator wget strace tigervnc xdialog).each do |pac|
+%w(terminator wget strace tigervnc xdialog autossh).each do |pac|
   package pac do
     action :install
   end
