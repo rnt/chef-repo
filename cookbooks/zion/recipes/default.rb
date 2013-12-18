@@ -156,3 +156,8 @@ end
     action :install
   end
 end
+
+# Unrar
+package 'unrar' do
+  action :install
+end
