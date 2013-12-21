@@ -70,7 +70,6 @@ Installing
 ==========
 su -l
 yum -y update
-ln -s /home/rcovarru/Proyectos/repo.rnt.cl/local-rnt.repo /etc/yum.repos.d/
 ln -s /home/etc/chef /etc/chef
 yum install chef
 chef-client
