@@ -87,7 +87,6 @@ end
 #
 package 'nautilus-dropbox' do
   action :install
-  return [0,1]
 end
 
 # Skype
