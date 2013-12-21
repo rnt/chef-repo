@@ -64,3 +64,13 @@ Next Steps
 ==========
 
 Read the README file in each of the subdirectories for more information about what goes in those directories.
+
+
+Installing
+==========
+su -l
+yum -y update
+ln -s /home/rcovarru/Proyectos/repo.rnt.cl/local-rnt.repo /etc/yum.repos.d/
+ln -s /home/etc/chef /etc/chef
+yum install chef
+chef-client
