@@ -79,12 +79,15 @@ package 'google-chrome-unstable' do
   action :install
 end
 
+# google-talkplugin
+
 # Dropbox
 #
-# La instalacion no es completamente desatendida... pero lo necesito. :(
+# La instalacion no es completamente desatendida... pero lo necesito si ya esta disponible :(
 #
 package 'nautilus-dropbox' do
   action :install
+  return [0,1]
 end
 
 # Skype
@@ -152,12 +155,17 @@ end
 
 # Dependencias para compilar gstm
 %w(gcc libgnomeui-devel libxml2-devel).each do |pac|
-  package pac
+  package pac do
     action :install
   end
 end
 
 # Unrar
 package 'unrar' do
+  action :install
+end
+
+# Para crear un liveusb desde una iso
+package 'liveusb-creator' do
   action :install
 end
