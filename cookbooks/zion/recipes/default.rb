@@ -168,3 +168,12 @@ end
 package 'liveusb-creator' do
   action :install
 end
+
+# Para poder descargar las ISOS
+package 'transmission' do
+  action :install
+end
+
+package 'mplayer' do
+  action :install
+end
