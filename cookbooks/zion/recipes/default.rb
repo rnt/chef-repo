@@ -8,7 +8,7 @@
 #
 
 #
-# Usado solo en Fedora 19
+# Usado solo en Fedora 19 y 20.
 #
 
 %w(dropbox google-chrome local-rnt skype virtualbox).each do |repo|
@@ -180,4 +180,11 @@ end
 
 package 'gparted' do
   action :install
+end
+
+# Latex
+%w(texlive texlive-babel-spanish texlive-tabulary)each do |pac|
+  package pac do
+    action :install
+  end
 end
