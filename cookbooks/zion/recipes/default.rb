@@ -177,3 +177,7 @@ end
 package 'mplayer' do
   action :install
 end
+
+package 'gparted' do
+  action :install
+end
