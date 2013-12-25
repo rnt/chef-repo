@@ -190,7 +190,7 @@ end
 end
 
 # Glade
-%w(pygtk2 glade3).each do |pac|
+%w(pygtk2 glade3 gimp).each do |pac|
   package pac do
     action :install
   end
