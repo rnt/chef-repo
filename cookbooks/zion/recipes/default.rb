@@ -196,3 +196,6 @@ end
   end
 end
 
+package 'gmpc' do
+  action :install
+end
