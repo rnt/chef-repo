@@ -199,3 +199,7 @@ end
 package 'gmpc' do
   action :install
 end
+
+package 'pidgin' do
+  action :install
+end
