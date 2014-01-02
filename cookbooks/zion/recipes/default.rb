@@ -203,3 +203,12 @@ end
 package 'pidgin' do
   action :install
 end
+
+package 'openldap-clients' do
+  action :install
+end
+
+package 'luma' do
+  action :install
+end
+
