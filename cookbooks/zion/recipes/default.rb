@@ -212,3 +212,22 @@ package 'luma' do
   action :install
 end
 
+package 'httpd' do
+  action :install
+end
+
+service 'httpd' do
+  action [ :enable, :start ]
+end
+
+package 'gnupg' do
+  action :install
+end
+
+package 'thunderbird-enigmail' do
+  action :install
+end
+
+package 'rdesktop' do
+  action :install
+end
