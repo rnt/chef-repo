@@ -183,7 +183,7 @@ package 'gparted' do
 end
 
 # Latex
-%w(texlive texlive-babel-spanish texlive-tabulary).each do |pac|
+%w(texlive texlive-babel-spanish texlive-tabulary kile).each do |pac|
   package pac do
     action :install
   end
