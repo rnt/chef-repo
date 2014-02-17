@@ -231,3 +231,7 @@ end
 package 'rdesktop' do
   action :install
 end
+
+package 'ImageMagick' do
+  action :install
+end
