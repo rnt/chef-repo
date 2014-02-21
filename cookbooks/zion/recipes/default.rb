@@ -75,7 +75,7 @@ end
 # end
 
 # Chrome
-package 'google-chrome-unstable' do
+package 'google-chrome-stable' do
   action :install
 end
 
@@ -233,5 +233,9 @@ package 'rdesktop' do
 end
 
 package 'ImageMagick' do
+  action :install
+end
+
+package 'dia' do
   action :install
 end
